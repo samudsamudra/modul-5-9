@@ -1,21 +1,16 @@
 <?php
-// Pastikan ID siswa tersedia
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    // Panggil file koneksi
     include "koneksi.php";
 
-    // Ambil ID siswa dari parameter URL
     $id_siswa = $_GET['id'];
 
-    // Query untuk mendapatkan data siswa berdasarkan ID
     $query = "SELECT * FROM siswa WHERE id_siswa = $id_siswa";
     $result = mysqli_query($conn, $query);
 
-    // Periksa apakah data siswa ditemukan
+  
     if(mysqli_num_rows($result) == 1){
         $siswa = mysqli_fetch_assoc($result);
 
-        // Cek apakah form telah disubmit
         if(isset($_POST['submit'])){
             // Ambil data yang diubah dari form
             $nama_siswa = $_POST['nama_siswa'];
@@ -24,18 +19,18 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $alamat = $_POST['alamat'];
             $id_kelas = $_POST['id_kelas'];
 
-            // Query untuk mengupdate data siswa
+            
             $query_update = "UPDATE siswa SET nama_siswa = '$nama_siswa', tanggal_lahir = '$tanggal_lahir', gender = '$gender', alamat = '$alamat', id_kelas = '$id_kelas' WHERE id_siswa = $id_siswa";
             $result_update = mysqli_query($conn, $query_update);
 
-            // Periksa apakah update berhasil
+          
             if($result_update){
-                // Jika berhasil, tampilkan notifikasi
+                
                 echo '<script>alert("Yey, data udah ke upgrade nih.");</script>';
-                // Alihkan user ke halaman tampil siswa
+              
                 echo '<script>window.location.href = "tampil_siswa.php";</script>';
             } else {
-                // Jika gagal, tampilkan pesan error
+               
                 echo '<div class="alert alert-danger mt-3">Gagal mengupdate data!</div>';
             }
         }
