@@ -4,7 +4,7 @@
   3. di dalam file siswa, akan banyak ketidak samaan dengan codingan di modul. Sebab yang di modul tidak semuanya tercoding dengan benar.
 
 #Catatan
-Saya harap, saya bisa mendapatkan nilai dengan menyelesaikan semua tanggung jawab saya sebagai siswa Telkom di kelas Industri 
+Saya harap, saya bisa mendapatkan nilai yang maksimal dengan menyelesaikan semua tanggung jawab saya sebagai siswa Telkom di kelas Industri 
 (dari modul 1-9, mulai dari siswa, sampai toko online yang kompleks).
 
 #Data_Siswa
